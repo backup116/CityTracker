@@ -151,6 +151,16 @@ class ROKCityViewer {
             cityItem.addEventListener('click', () => {
                 this.selectCity(city);
             });
+
+            const confidenceClass = this.getConfidenceClass(city.confidence);
+
+            cityItem.innerHTML = `
+                <div class="city-name">${city.text}</div>
+                <div class="city-confidence ${confidenceClass}">
+                    Confidence: ${(city.confidence * 100).toFixed(0)}%
+                </div>
+            `;
+
             citiesList.appendChild(cityItem);
         });
     }
@@ -372,6 +382,7 @@ class ROKCityViewer {
 
         // Update panel content
         document.getElementById('panel-city-name').textContent = city.text;
+        //document.getElementById('panel-confidence').textContent = `${(city.confidence * 100).toFixed(0)}%`;
         document.getElementById('panel-location').textContent = `(${city.coordinates.x}, ${city.coordinates.y})`;
 
         // Update city image with better path handling
@@ -620,6 +631,4 @@ window.ROKUtils = {
         }
         return null;
     }
-
 };
-
