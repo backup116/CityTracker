@@ -151,16 +151,6 @@ class ROKCityViewer {
             cityItem.addEventListener('click', () => {
                 this.selectCity(city);
             });
-
-            const confidenceClass = this.getConfidenceClass(city.confidence);
-
-            cityItem.innerHTML = `
-                <div class="city-name">${city.text}</div>
-                <div class="city-confidence ${confidenceClass}">
-                    Confidence: ${(city.confidence * 100).toFixed(0)}%
-                </div>
-            `;
-
             citiesList.appendChild(cityItem);
         });
     }
@@ -631,4 +621,5 @@ window.ROKUtils = {
         }
         return null;
     }
+
 };
