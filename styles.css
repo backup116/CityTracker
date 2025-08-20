@@ -620,6 +620,7 @@ body {
     min-height: 200px;
         position: relative;
     z-index: 10;
+    overflow:visible;
 }
 
 .city-details-panel.hidden {
@@ -719,4 +720,5 @@ body {
     font-size: 0.9rem;
 
 }
+
 
