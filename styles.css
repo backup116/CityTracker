@@ -299,6 +299,7 @@ body {
     background: #ffffff;
     position: relative;
     overflow: hidden;
+        margin-top: 1rem;
 }
 
 .city-item::before {
@@ -364,7 +365,8 @@ body {
         gap: 1.5rem;
     }
     .cities-panel {
-        max-height: 400px;
+        max-height: none;
+        height: auto;
     }
 }
 
@@ -616,6 +618,8 @@ body {
     opacity: 1;
     transform: translateY(0);
     min-height: 200px;
+        position: relative;
+    z-index: 10;
 }
 
 .city-details-panel.hidden {
@@ -626,6 +630,7 @@ body {
     border: none;
     pointer-events: none;
     min-height: 0;
+    overflow: hidden;
 }
 
 .city-details-header {
@@ -714,3 +719,4 @@ body {
     font-size: 0.9rem;
 
 }
+
