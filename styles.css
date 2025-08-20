@@ -232,6 +232,7 @@ body {
     max-height: 80vh;
     display: flex;
     flex-direction: column;
+       overflow: visible;
 }
 
 .panel-header {
@@ -711,4 +712,5 @@ body {
     font-weight: 600;
     color: #1f2937;
     font-size: 0.9rem;
+
 }
