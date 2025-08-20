@@ -372,7 +372,6 @@ class ROKCityViewer {
 
         // Update panel content
         document.getElementById('panel-city-name').textContent = city.text;
-        document.getElementById('panel-confidence').textContent = `${(city.confidence * 100).toFixed(0)}%`;
         document.getElementById('panel-location').textContent = `(${city.coordinates.x}, ${city.coordinates.y})`;
 
         // Update city image with better path handling
@@ -623,3 +622,4 @@ window.ROKUtils = {
     }
 
 };
+
