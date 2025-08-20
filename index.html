@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROK City Viewer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1><i class="fas fa-map-marked-alt"></i> ROK City Viewer</h1>
+                <p>Explore cities across the Rise of Kingdoms map</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Map Section -->
+            <section class="map-section">
+                <div class="map-container">
+                    <img src="map1_upscaled.png" alt="ROK Map" id="map-image" class="map-image">
+                    <div id="city-markers" class="city-markers"></div>
+                    <div id="coordinate-grid" class="coordinate-grid"></div>
+                </div>
+                <!-- Debug Info -->
+                <div class="debug-info">
+                    <h4>Debug Info</h4>
+                    <div id="debug-coordinates">Click on map to see coordinates</div>
+                    <div id="debug-cities">Cities loaded: <span id="city-count">0</span></div>
+                    <button id="toggle-grid" class="toggle-grid-btn">Toggle Grid</button>
+
+                    <!-- Coordinate System Legend -->
+                    <div class="coordinate-legend">
+                        <h5>Coordinate System</h5>
+                        <div class="coord-layout">
+                            <div class="coord-item">Top-Left: (0, 1200)</div>
+                            <div class="coord-item">Top-Right: (1200, 1200)</div>
+                            <div class="coord-item">Bottom-Left: (0, 0)</div>
+                            <div class="coord-item">Bottom-Right: (1200, 0)</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cities Panel -->
+            <section class="cities-panel">
+                <div class="panel-header">
+                    <h2><i class="fas fa-city"></i> Cities</h2>
+                    <div class="search-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="city-search" placeholder="Search cities..." class="search-input">
+                    </div>
+                </div>
+
+                <!-- City Details Panel - Always Visible -->
+                <div id="city-details-panel" class="city-details-panel hidden">
+                    <div class="city-details-header">
+                        <h3 id="panel-city-name">City Name</h3>
+                        <button id="close-city-panel" class="close-panel-btn">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="city-details-content">
+                        <div class="city-image-container">
+                            <img id="panel-city-image" src="" alt="City Image" class="city-image">
+                        </div>
+                        <div class="city-details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Confidence:</span>
+                                <span id="panel-confidence" class="detail-value"></span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Location:</span>
+                                <span id="panel-location" class="detail-value"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cities-list" id="cities-list">
+                    <!-- Cities will be populated here -->
+                </div>
+            </section>
+        </main>
+
+        <!-- City Details Panel is now above the cities list -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
